@@ -1,0 +1,54 @@
+.resultsExpended {
+    margin-top: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 70%;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .usersExpended {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .usersExpended:hover {
+    background-color: rgb(238, 250, 255);
+  }
+
+  .usersExpended:last-child {
+      border-bottom: none;
+  }
+  
+  .picExpended {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 5px;
+  }
+  
+  .nameExpended {
+    margin-left: 10px;
+  }
+
+  .pageButtons {
+      display: flex;
+      flex-direction: row;
+      margin: 1rem;
+  }
+
+  .pageNum {
+    margin: 0.2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .pageNum:focus {
+      color:#131313 ;
+    border-bottom: 3px solid #ccc;
+  }

@@ -1,15 +1,17 @@
 import react, { useState, useEffect } from "react";
 import axios from "axios";
+import ExpendedUsers from "./components/ExpendedUsers";
 import "./App.css";
 
 const App = () => {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
+  const [isExpended, setIsExpended] = useState(false)
 
   useEffect(() => {
     const getUsers = async () => {
       const fetchUsers = await axios.get(
-        "https://randomuser.me/api/?results=100"
+        "https://randomuser.me/api/?results=50"
       );
       console.log(fetchUsers.data.results);
       setUsers(fetchUsers.data.results);
@@ -18,7 +20,7 @@ const App = () => {
   }, []);
 
   const expendHandler = () => {
-    
+    setIsExpended(true);
   }
 
   return (
@@ -32,7 +34,7 @@ const App = () => {
           setQuery(e.target.value);
         }}
       />
-      {query !== "" &&
+      {query !== "" && isExpended === false &&
       <div className="results">
         {users
           .filter((user) => {
@@ -56,7 +58,7 @@ const App = () => {
           <p className="expend" onClick={expendHandler}>Show More</p>
           </div>
           }
-          
+          {isExpended && query !== "" && <ExpendedUsers usersList={users} query={query}/>}
     </div>
   );
 };
