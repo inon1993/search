@@ -11,6 +11,17 @@
   border-radius: 10px;
 }
 
+.search-expended {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.search-bar-expended {
+  width: 40%;
+}
+
 .results {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 40%;

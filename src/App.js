@@ -23,9 +23,14 @@ const App = () => {
     setIsExpended(true);
   }
 
+  const submitSearchHandler = (e) => {
+    e.preventDefault();
+    setQuery(e.target[0].value)
+  }
+
   return (
     <div className="search-bar">
-      <input
+      {!isExpended && <input
         className="search"
         type="text"
         placeholder="Search"
@@ -33,7 +38,18 @@ const App = () => {
         onChange={(e) => {
           setQuery(e.target.value);
         }}
+      />}
+      {isExpended && <form className="search-bar-expended" onSubmit={submitSearchHandler}>
+        <input
+        className="search-expended"
+        type="text"
+        placeholder="Search"
+        defaultValue={query}
+        // onChange={(e) => {
+        //   setQuery(e.target.value);
+        // }}
       />
+      </form>}
       {query !== "" && isExpended === false &&
       <div className="results">
         {users

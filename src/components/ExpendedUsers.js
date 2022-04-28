@@ -7,6 +7,7 @@ const ExpendedUsers = ({usersList, query}) => {
     const [sliceVal, setSliceVal] = useState({start: 0, end: 10})
 
     useEffect(() => {
+        console.log(query);
         let a = usersList.filter((user) => {if (user.name.first.toLowerCase().includes(query)) {
             return user;
           }})
